@@ -1,5 +1,5 @@
 package org.example.customerservice.controller;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.example.customerservice.entities.Customer;
 import org.example.customerservice.service.CustomerService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class CustomerRestController {
         return customerService.getAllCustomers();
     }
     @GetMapping("/customers/{id}")
-    public Customer findCustomerById(Long id) {
+    public Customer findCustomerById(@PathVariable Long id) {
         return customerService.findCustomerById(id);
     }
     @PostMapping("/customers")
